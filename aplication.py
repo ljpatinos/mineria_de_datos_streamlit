@@ -6,17 +6,17 @@ import gzip
 import pickle
 
 # Diccionario para asignar nombres a las clases
-class_names = {
-    0:"0", 1:"1", 2:"2", 3:"3",
-    4:"4", 5:"5", 6:"6", 7:"7",
-    8:"8", 9:"9"
-}
+class_names = [
+    "Camiseta/top", "Pantalón", "Suéter", "Vestido",
+    "Abrigo", "Sandalia", "Camisa", "Zapatilla deportiva",
+    "Bolso", "Botín"
+]
 
 def preprocess_image(image):
     image = image.convert('L')  # convertir a escala de grises
     image = image.resize((28, 28))
     image_array = img_to_array(image) / 255.0
-    image_array = np.expand_dims(image_array, axis=0)  # Ajustar forma (1, 28, 28, 1)
+    image_array = np.expand_dims(image_array, axis=0)
     return image_array
 
 def load_model():
@@ -64,5 +64,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-print(model.input_shape)
