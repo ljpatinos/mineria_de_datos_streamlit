@@ -7,9 +7,9 @@ import pickle
 
 # Diccionario para asignar nombres a las clases
 class_names = [
-    "Camiseta/top", "Pantalón", "Suéter", "Vestido",
-    "Abrigo", "Sandalia", "Camisa", "Zapatilla deportiva",
-    "Bolso", "Botín"
+    "9", "1", "2", "3",
+    "4", "5", "6", "7",
+    "8", "9"
 ]
 
 def preprocess_image(image):
@@ -21,7 +21,7 @@ def preprocess_image(image):
 
 def load_model():
     filename = "model_trained_classifier.pkl.gz"
-    with gzip.open(filename, 'wb') as f:
+    with gzip.open(filename, 'rb') as f:
         model = pickle.load(f)
     return model
 
