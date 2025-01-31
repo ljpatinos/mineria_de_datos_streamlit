@@ -16,7 +16,6 @@ def preprocess_image(image):
     image = image.convert('L')  # convertir a escala de grises
     image = image.resize((28, 28))
     image_array = img_to_array(image) / 255.0
-    image_array = np.expand_dims(image_array, axis=-1)
     image_array = np.expand_dims(image_array, axis=0)  # Ajustar forma (1, 28, 28, 1)
     return image_array
 
@@ -57,8 +56,7 @@ def main():
 
         if st.button("Clasificar imagen"):
             model = load_model()
-            prediction = model.predict(preprocessed_image)
-            #prediction = model.predict(preprocessed_image.reshape(1, -1))  # (1, 784)
+            prediction = model.predict(preprocessed_image.reshape(1, -1))  # (1, 784)
             class_id = np.argmax(prediction)  # Obtener índice de la clase predicha
             class_name = class_names[class_id]  # Obtener nombre de la clase
 
