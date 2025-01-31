@@ -7,9 +7,9 @@ import pickle
 
 # Diccionario para asignar nombres a las clases
 class_names = [
-    "Camiseta/top", "Pantalón", "Suéter", "Vestido",
-    "Abrigo", "Sandalia", "Camisa", "Zapatilla deportiva",
-    "Bolso", "Botín"
+    "0", "1", "2", "3",
+    "4", "5", "6", "7",
+    "8", "9"
 ]
 
 def preprocess_image(image):
