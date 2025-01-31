@@ -21,7 +21,7 @@ def preprocess_image(image):
 
 def load_model():
     filename = "model_trained_classifier.pkl.gz"
-    with gzip.open(filename, 'rb') as f:
+    with gzip.open(filename, 'wb') as f:
         model = pickle.load(f)
     return model
 
