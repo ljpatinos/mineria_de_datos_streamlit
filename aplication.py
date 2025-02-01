@@ -55,9 +55,8 @@ def main():
             )
 
         if st.button("Clasificar imagen"):
-            model = load_model()
-            st.markdown(f'{preprocessed_image.shape()}')
-            prediction = model.predict(preprocessed_image)  # (1, 784)
+            model = load_model()       
+            prediction = model.predict(preprocessed_image.reshape(1,-1))  # (1, 784)
             #class_id = np.argmax(prediction)  # Obtener índice de la clase predicha
             st.markdown(f"### La imagen fue clasificada como: **{prediction}**")
             
