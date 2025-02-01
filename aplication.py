@@ -31,6 +31,11 @@ def main():
         '<h1 style="color: #4CAF50; text-align: center;">Clasificación de la base de datos Fashion MNIST</h1>',
         unsafe_allow_html=True
     )
+
+    st.markdown("### Los hiperparametros del modelo son:")
+    st.markdown("scaler=None")
+    st.markdown("n_neighbors=4")
+    st.markdown("p=3")
     st.markdown("Sube una imagen para clasificar")
 
     uploaded_file = st.file_uploader("Selecciona una imagen (PNG, JPG, JPEG):", type=["jpg", "png", "jpeg"])
@@ -59,8 +64,6 @@ def main():
             prediction = model.predict(preprocessed_image.reshape(1,-1))  # (1, 784)
             #class_id = np.argmax(prediction)  # Obtener índice de la clase predicha
             st.markdown(f"### La imagen fue clasificada como: **{prediction}**")
-
-st.markdown(f"### Los hiperparametros del modelo son")
 
 if __name__ == "__main__":
     main()
