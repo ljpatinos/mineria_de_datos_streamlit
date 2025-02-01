@@ -32,7 +32,7 @@ def main():
         unsafe_allow_html=True
     )
 
-    st.markdown("Los hiperparametros seleccionados para el modelo fueron n_neighbors=4 y p=3")
+    st.markdown("El mejor modelo seleccionado fue KNeighborsClassifier, scaler: None con los hiperparámetros n_neighbors=4 y p=3")
     st.markdown("Sube una imagen para clasificar")
 
     uploaded_file = st.file_uploader("Selecciona una imagen (PNG, JPG, JPEG):", type=["jpg", "png", "jpeg"])
