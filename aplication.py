@@ -59,9 +59,6 @@ def main():
             prediction = model.predict(preprocessed_image)  # (1, 784)
             #class_id = np.argmax(prediction)  # Obtener índice de la clase predicha
             st.markdown(f"### La imagen fue clasificada como: **{prediction}**")
-            class_name = class_names[class_id]  # Obtener nombre de la clase
-
-            st.markdown(f"### La imagen fue clasificada como: **{class_name}**")
-
+            
 if __name__ == "__main__":
     main()
